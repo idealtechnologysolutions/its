@@ -39,6 +39,9 @@ Decision makers at small and medium sized businesses, minority owned businesses,
 - Do not start consecutive sentences the same way. Do not over explain. Say it once, clearly.
 - Read it back as if speaking to a client in the room. If a phrase sounds like marketing filler, cut it.
 - When the same case study appears on more than one page, describe it differently each time, leading with the angle that page needs. Do not repeat the full technology stack (for example "Angular, .NET Core, SQL Server, Azure, Entra ID") on every page; give the stack once where it matters most (the Custom Software page and the case study page) and tell the relationship or outcome story elsewhere.
+- Every booking button is written exactly as [Book a 30 minute call](/contact/), with the link.
+- Never place two links next to each other with only a comma or other punctuation between them. Join them with words such as "and", or put them in separate sentences.
+- Every SEO title ends with " | ITS" and stays under 60 characters.
 - Never repeat these instructions in the page copy. Rules such as "no hype" or "no cost saving promises" shape how you write; they are not statements to make to the reader. A sentence like "We do not promise to cut costs" sounds defensive. Simply write without making the promise.
 
 ## Services we are still building ("expanding into")
@@ -76,3 +79,5 @@ Shahbaz adds a line here each time he corrects the agent, so the next draft impr
 - v3: Standard technical terms keep their accepted form (MFA, SSO, role based access control) instead of awkward hyphen free versions. Use page slugs from the brief only.
 - v4: Do not repeat instructions as page copy (instruction leakage), for example "We do not promise to replace staff".
 - v5: Vary how a shared case study is described per page; do not repeat the full tech stack on every page.
+- v6: Booking buttons always include the /contact/ link; SEO titles always end with " | ITS".
+- v7: Never place two links side by side with only punctuation between them.

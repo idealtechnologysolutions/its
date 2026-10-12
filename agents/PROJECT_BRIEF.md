@@ -3,10 +3,9 @@
 ## Company facts
 - Name: Ideal Technology Solutions, LLC (ITS)
 - In business since 2001 (25 years)
-- Headquarters: Southfield, Michigan.
-- Street address: 29777 Telegraph Road, Suite 4200, Southfield, Michigan 48034
-- Phone: 947-228-0709 (link as tel:+19472280709)
-- Email: info@idealtechnologysolutions.us (link as mailto:info@idealtechnologysolutions.us)
+- Headquarters: Southfield, Michigan. Street address: 29777 Telegraph Road, Suite 4200, Southfield, Michigan 48034
+- Phone: 947-228-0709
+- Email: info@idealtechnologysolutions.us
 - Markets for the rebrand, in order of emphasis:
   1. Metro Detroit and Michigan: home base and strongest claim. 25 years, local team, on site visits. Lead with this everywhere.
   2. Atlanta, Georgia: a market ITS serves and is growing in. Say ITS works with clients in the Atlanta area. Do not claim a local office or on site visits there.
