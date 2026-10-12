@@ -1022,8 +1022,19 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 
 .site-logo--reversed,
 .site-logo--reversed:hover { color: var(--white); }
-.site-footer__place { margin-top: var(--space-3); color: var(--on-navy-soft); }
-.site-footer__brand .needs-input { margin-top: var(--space-5); }
+.site-footer__contact {
+  display: grid;
+  justify-items: start;
+  margin-top: var(--space-4);
+  color: var(--on-navy-soft);
+  font-style: normal;
+}
+.site-footer__contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  overflow-wrap: anywhere;
+}
 
 .site-footer__heading {
   margin-bottom: var(--space-3);

@@ -3,7 +3,7 @@
 ## Page meta
 - Page name: Digital Transformation & Technology Consulting
 - URL slug: /services/digital-transformation-consulting/
-- SEO title: Digital Transformation & IT Consulting in Detroit
+- SEO title: Digital Transformation & IT Consulting in Detroit | ITS
 - Meta description: Technology advice for Metro Detroit organizations. We assess your systems and give you a written plan with priorities and estimated cost ranges.
 
 ## Hero

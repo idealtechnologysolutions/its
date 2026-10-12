@@ -3,7 +3,7 @@
 ## Page meta
 - Page name: Data, AI & Automation
 - URL slug: /services/data-ai-automation/
-- SEO title: Data, AI & Automation | Ideal Technology Solutions
+- SEO title: Data, AI & Automation in Metro Detroit | ITS
 - Meta description: Power BI dashboards, data integration, automation and AI tools on Microsoft Azure, from a Southfield team that keeps people in charge of decisions.
 
 ## Hero

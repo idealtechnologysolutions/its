@@ -37,7 +37,7 @@ python tools/generate_pages.py --check   # list pages that would change, write n
 
 ## screenshots.cjs
 
-Saves full-page screenshots of every built page (stubs are skipped) at 375, 768 and 1280px to `docs/screenshots/`, named `<page>-<width>.png`. The page name is `home` for the homepage and the last slug segment otherwise, for example `managed-it-infrastructure-375.png`. Old screenshots are deleted first, so the folder always matches the current build. Run it after every build task.
+Saves full-page screenshots of every built page (stubs are skipped) at 375, 768 and 1280px to `docs/screenshots/`, named `<page>-<width>.png`. The folder is in `.gitignore`, so screenshots stay on your machine and are not committed. The page name is `home` for the homepage and the last slug segment otherwise, for example `managed-it-infrastructure-375.png`. Old screenshots are deleted first, so the folder always matches the current build. Run it after every build task.
 
 It serves `site/` itself on a free local port, so no other server is needed. It waits for the fonts and the hero animation before each capture.
 

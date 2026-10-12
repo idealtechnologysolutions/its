@@ -11,7 +11,7 @@
 
 We build and protect the cloud systems Metro Detroit businesses rely on every day.
 
-[Book a 30 minute call]
+[Book a 30 minute call](/contact/)
 
 ## Protection that fits the size of your business
 
@@ -62,7 +62,7 @@ Business applications often hold your most sensitive information. When we deploy
 
 Patient records, resident data and student information call for extra care. We help healthcare providers, public agencies and schools meet the data protection requirements that apply to them, such as HIPAA for healthcare. Our role is to put the right technical controls in place and document them clearly for your own review. Government and school clients receive written scopes of work and itemized quotes, and we plan projects around budget cycles and the school calendar.
 
-## Chemico Credit Hold Repository
+## The Chemico Group: Credit Hold Repository
 
 The Chemico Group, a manufacturer, needed an internal application to track credit holds as they move through a five stage resolution scale. We built it with Angular, .NET Core and SQL Server and hosted it on Microsoft Azure. Staff sign in with their Microsoft Entra ID work accounts, so the company manages access in one place and can shut it off when someone leaves. Every edit is logged, which gives Chemico a full history of changes to review at any time.
 
@@ -70,7 +70,7 @@ The Chemico Group, a manufacturer, needed an internal application to track credi
 
 Book a 30 minute appointment with a client advisor. We will look at how your data is stored and protected today and suggest practical next steps. Every engagement is quoted after we understand your requirements.
 
-[Book a 30 minute call]
+[Book a 30 minute call](/contact/)
 
 ---
 

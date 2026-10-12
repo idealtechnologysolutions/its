@@ -138,13 +138,6 @@ def header(path):
 {HEADER_END}'''
 
 
-def needs_input(text, indent=""):
-    return (f'{indent}<!-- part: needs-input -->\n'
-            f'{indent}<div class="needs-input" role="note"><span class="needs-input__label">Needs input</span>'
-            f'<span class="needs-input__text">{e(text)}</span></div>\n'
-            f'{indent}<!-- /part: needs-input -->')
-
-
 def footer_links(key, label, items):
     links = "\n".join(f'        <li><a href="{h}">{e(t)}</a></li>' for h, t in items)
     return f'''    <nav class="site-footer__nav site-footer__nav--{key}" aria-label="{label}">
@@ -164,8 +157,12 @@ def footer():
         <img class="site-logo__mark" src="/assets/brand/logo-mark-reversed.svg" alt="" width="56" height="32">
         <span class="site-logo__name">Ideal Technology Solutions</span>
       </a>
-      <p class="site-footer__place">Southfield, Michigan</p>
-{needs_input("footer contact details", "      ")}
+      <address class="site-footer__contact">
+        <span class="site-footer__address">29777 Telegraph Road, Suite 4200</span>
+        <span class="site-footer__address">Southfield, Michigan 48034</span>
+        <a href="tel:+19472280709">947-228-0709</a>
+        <a href="mailto:info@idealtechnologysolutions.us">info@idealtechnologysolutions.us</a>
+      </address>
     </div>
 {footer_links("services", "Services", SERVICES)}
 {footer_links("industries", "Industries", INDUSTRIES)}
