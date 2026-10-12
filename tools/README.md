@@ -34,3 +34,27 @@ python tools/generate_pages.py --check   # list pages that would change, write n
 1. Open the page's stub, for example `site/services/cloud-cybersecurity/index.html`.
 2. Replace the stub's `<main>` element with the page body.
 3. Run `python tools/generate_pages.py`. The head picks up the title and description from `content/`, the stub `noindex` comes off, and stubs are created for any new links.
+
+## screenshots.cjs
+
+Saves full-page screenshots of every built page (stubs are skipped) at 375, 768 and 1280px to `docs/screenshots/`, named `<page>-<width>.png`. The page name is `home` for the homepage and the last slug segment otherwise, for example `managed-it-infrastructure-375.png`. Old screenshots are deleted first, so the folder always matches the current build. Run it after every build task.
+
+It serves `site/` itself on a free local port, so no other server is needed. It waits for the fonts and the hero animation before each capture.
+
+### One-time setup
+
+The script needs `puppeteer-core`, which drives your installed Chrome. Install it **outside the repo** so no `package.json` or `node_modules` ends up here:
+
+```
+npm install --prefix "%LOCALAPPDATA%\its-tools" puppeteer-core@23.11.1
+```
+
+Chrome is expected at `C:/Program Files/Google/Chrome/Application/chrome.exe`. Set `CHROME_PATH` to use another location.
+
+### Run it
+
+```
+node tools/screenshots.cjs "%LOCALAPPDATA%\its-tools"
+```
+
+These are captured in one pass by Chrome itself. Screenshot extensions that scroll and stitch the page, such as FireShot in Chrome's phone mode, can show sections overlapping that look fine in the browser.

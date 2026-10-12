@@ -488,18 +488,16 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 .bridge-art__node--accent { fill: var(--cyan); }
 
 /* The one animation on the site: the deck draws across the bridge, once.
-   The finished state is the default, so reduced motion shows it at once. */
-/* The gap is a little longer than the line so no round cap shows before it starts. */
-.bridge-art__deck--draw { stroke-dasharray: 1 1.1; stroke-dashoffset: 0; }
+   The keyframes only set the start, and backwards fill holds it during the delay.
+   When the animation ends, or never runs (reduced motion), the line is simply
+   its normal, fully drawn self; nothing has to hold a final frame. */
+.bridge-art__deck--draw { transform-box: fill-box; transform-origin: left center; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .bridge-art__deck--draw {
-    stroke-dashoffset: 1.05;
-    animation: deck-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
-  }
+  .bridge-art__deck--draw { animation: deck-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s backwards; }
 }
 
-@keyframes deck-draw { to { stroke-dashoffset: 0; } }
+@keyframes deck-draw { from { transform: scaleX(0); } }
 
 /* ---------- 6. Icons ---------- */
 
@@ -622,16 +620,15 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 
 /* ---------- 10. Timeline (part: timeline) ---------- */
 
-/* Points sit to scale: --at is years since 2001, out of 25.
-   Mobile runs top to bottom, tablet and up run left to right. */
+/* Three points, evenly spaced. Mobile runs top to bottom,
+   tablet and up run left to right. */
 .timeline {
-  --timeline-span: 25;
   --dot: 0.8rem;
   position: relative;
   list-style: none;
   margin: var(--space-6) 0 var(--space-8);
   padding: 0;
-  height: calc(var(--timeline-span) * 0.9rem);
+  height: 10rem;
   font-family: var(--font-heading);
   font-size: var(--text-numeral);
   font-weight: var(--weight-heading-medium);
@@ -649,13 +646,15 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 }
 .timeline__point {
   position: absolute;
+  top: 0;
   left: 0;
-  top: calc(var(--at) / var(--timeline-span) * 100%);
   display: flex;
   align-items: center;
   gap: var(--space-4);
   transform: translateY(-50%);
 }
+.timeline__point:nth-child(2) { top: 50%; }
+.timeline__point:last-child { top: 100%; }
 .timeline__point::before {
   content: "";
   flex: none;
@@ -671,33 +670,31 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
   .timeline::before {
     top: auto;
     bottom: calc(var(--dot) / 2 - var(--deck-width) / 2);
-    left: 0;
-    right: 0;
+    left: calc(var(--dot) / 2);
+    right: calc(var(--dot) / 2);
     width: auto;
     height: var(--deck-width);
   }
   .timeline__point {
     top: auto;
     bottom: 0;
-    left: calc(var(--at) / var(--timeline-span) * 100%);
     flex-direction: column-reverse;
     align-items: flex-start;
-    transform: translateX(calc(var(--dot) / -2));
+    transform: none;
+  }
+  .timeline__point:nth-child(2) {
+    top: auto;
+    left: 50%;
+    align-items: center;
+    transform: translateX(-50%);
   }
   .timeline__point:last-child {
+    top: auto;
     left: auto;
     right: 0;
     align-items: flex-end;
-    transform: translateX(calc(var(--dot) / 2));
+    transform: none;
   }
-}
-
-/* Tablet: 2004 sits only 3 years from 2001, so its label drops below the line. */
-@media (min-width: 768px) and (max-width: 1079px) {
-  .timeline { height: calc(2 * (var(--text-numeral) + var(--space-4)) + var(--dot)); }
-  .timeline::before { bottom: auto; top: calc(var(--text-numeral) + var(--space-4) + var(--dot) / 2 - var(--deck-width) / 2); }
-  .timeline__point { top: 0; bottom: auto; }
-  .timeline__point:nth-child(2) { top: calc(var(--text-numeral) + var(--space-4)); flex-direction: column; }
 }
 
 /* ---------- 11. Where we work map ---------- */

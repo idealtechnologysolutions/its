@@ -78,8 +78,9 @@ Type:
 1. Read the task file, the copy files it names and this file.
 2. Before your first build in a task that introduces new layouts, write or update `docs/DESIGN_PLAN.md`: tokens, type scale, a short ASCII wireframe per new layout, and the reasoning behind each choice. Stop and wait for Shahbaz to approve it before writing code.
 3. Build. Check your own work at the three widths, using screenshots if a browser tool is available.
-4. Commit on a branch named for the task (for example `build/task-1`). Never commit to `main` and never push. Shahbaz reviews, pushes and merges.
-5. Finish with a short report:
+4. After every build task, save full-page screenshots of each built page at 375px, 768px and 1280px to `docs/screenshots/`, named like `home-375.png`. Overwrite the old screenshots on each run. Use `tools/screenshots.cjs` (see `tools/README.md`).
+5. Commit on a branch named for the task (for example `build/task-1`). Never commit to `main` and never push. Shahbaz reviews, pushes and merges.
+6. Finish with a short report:
    - Pages built and stubs created
    - Copy issues found (left unchanged)
    - Placeholders added (screenshots, needs input)

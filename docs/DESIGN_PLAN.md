@@ -341,7 +341,7 @@ Desktop:
 └▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓┘
 ```
 
-The gap between 2004 and Today is drawn to scale (3 years vs 22 years), which quietly makes the 25-year point. Mobile: the timeline turns vertical (years down the left edge), then the paragraphs.
+The three points are evenly spaced at every width (changed in design review round 1; the plan first drew them to scale). Mobile: the timeline turns vertical (years down the left edge), then the paragraphs.
 
 "Where we work" is white, split layout, with the map beside the two paragraphs.
 
@@ -528,34 +528,33 @@ Column labels ("Services", "Industries", "Company") are footer labels, which the
 **Construction.** The hero bridge is an inline SVG redrawn from the geometry of `logo-mark.svg` (two towers, the cable curve, five suspenders, the deck), scaled to about 520px wide on desktop. It has to be inline so CSS can animate the deck. Everywhere else (header, footer, CTA band) the logo is an `<img>` pointing at the files in `site/assets/brand/`, so swapping the designer's final files updates those places with no code change. The hero SVG and the service hero illustration are the only two places that copy the geometry; both are marked with a `<!-- logo geometry: update when final vectors arrive -->` comment.
 
 - Towers, cable and suspenders: navy.
-- Deck: a single cyan stroke (`<line>` with `pathLength="1"`), extended a little past each tower so it reads as a road meeting land on both sides: business on one side, technology on the other.
+- Deck: a single cyan stroke (`<line>`), extended a little past each tower so it reads as a road meeting land on both sides: business on one side, technology on the other.
 - Behind the bridge: the street grid texture, in very faint navy. It is drawn from Detroit's real street plan: Woodward, Gratiot, Grand River and Michigan Avenue fanning out from the riverfront, crossed by the mile road grid that runs north through Southfield. Abstracted, no labels, no map accuracy claimed. It covers only the bridge's half of the hero so the text stays on clean white.
 - `aria-hidden="true"` on the whole illustration. It is decorative; the `h1` says what matters.
 
 **The one animation.** On page load the cyan deck draws from left to right across the bridge, once.
 
 ```css
-/* Finished state is the default. */
-.hero-bridge__deck { stroke-dasharray: 1; stroke-dashoffset: 0; }
+/* The finished line is the element's normal style. The keyframes only set
+   the start, and backwards fill holds it during the delay. */
+.bridge-art__deck--draw { transform-box: fill-box; transform-origin: left center; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-bridge__deck {
-    stroke-dashoffset: 1;
-    animation: deck-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
-  }
+  .bridge-art__deck--draw { animation: deck-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s backwards; }
 }
-@keyframes deck-draw { to { stroke-dashoffset: 0; } }
+@keyframes deck-draw { from { transform: scaleX(0); } }
 ```
 
 - CSS only, no JavaScript. Runs once, does not loop, does not replay on scroll.
 - With reduced motion turned on, the rule never applies, so the finished bridge shows from the first frame. The same is true in any browser that does not run CSS animations.
+- Changed in design review round 1: the first build drew the line with a dash pattern held at its last frame, which could leave the line missing. Now the keyframes only set the start, so the finished line is the element's normal style.
 - Nothing else on the site moves: no scroll reveals, no hover lifts. Links change color and buttons change fill on hover, instantly.
 
 ---
 
 ## 6. What makes this ITS and not a template
 
-A generic IT company site leads with a stock photo of a server room, a gradient, and a grid of identical rounded cards with icons. This design is built from the one thing only ITS owns: the bridge. The logo's cyan deck becomes the site's structural line: it draws across the hero, runs the 2001 to today timeline, and caps the footer. The faint texture behind the hero is Detroit's own street plan, Woodward's avenues spreading from the river and the mile roads running up to Southfield, which says "Metro Detroit since 2001" before anyone reads the headline. The page structure is borrowed from engineering drawings rather than marketing templates: a strict heading-left, text-right layout, ruled lists instead of cards, square edges, and real numbers drawn to scale (the long stretch between 2004 and today is the 25 years). It is quiet on purpose, so the one moment that moves, the deck drawing across the bridge, is the thing a visitor remembers.
+A generic IT company site leads with a stock photo of a server room, a gradient, and a grid of identical rounded cards with icons. This design is built from the one thing only ITS owns: the bridge. The logo's cyan deck becomes the site's structural line: it draws across the hero, runs the 2001 to today timeline, and caps the footer. The faint texture behind the hero is Detroit's own street plan, Woodward's avenues spreading from the river and the mile roads running up to Southfield, which says "Metro Detroit since 2001" before anyone reads the headline. The page structure is borrowed from engineering drawings rather than marketing templates: a strict heading-left, text-right layout, ruled lists instead of cards, square edges, and a plain three-point timeline from 2001 to today. It is quiet on purpose, so the one moment that moves, the deck drawing across the bridge, is the thing a visitor remembers.
 
 ---
 
