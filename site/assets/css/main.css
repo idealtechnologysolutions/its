@@ -486,6 +486,9 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 .bridge-art__line { fill: none; stroke: var(--navy); stroke-width: 3; stroke-linecap: round; }
 .bridge-art__node { fill: var(--white); stroke: var(--navy); stroke-width: 3; }
 .bridge-art__node--accent { fill: var(--cyan); }
+.bridge-art__shield { fill: var(--cyan); stroke: var(--navy); stroke-width: 3; stroke-linejoin: round; }
+.bridge-art__bar { fill: var(--cyan-deep); }
+.bridge-art__spark { fill: none; stroke: var(--cyan); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
 
 /* The one animation on the site: the deck draws across the bridge, once.
    The keyframes only set the start, and backwards fill holds it during the delay.
@@ -513,6 +516,7 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
   background: var(--gray-light);
 }
 .icon-tile .icon { width: 3rem; height: 3rem; }
+.section--alt .icon-tile { background: var(--white); }
 
 /* ---------- 7. Service summaries (part: card-list) ---------- */
 
@@ -583,6 +587,13 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 
 .work-list { display: grid; gap: var(--space-8) var(--grid-gap); }
 .work-list__all { margin-top: var(--space-7); }
+.work-list__more { max-width: var(--measure); margin-top: var(--space-7); }
+
+/* Proof sections that hold a case study inside the split layout. */
+.split__body > .prose + .case-study,
+.split__body > .case-study + .proof-note { margin-top: var(--space-7); }
+.proof-note { max-width: var(--measure); }
+.proof-note h3 { margin-bottom: var(--space-3); }
 .work-list__all a { display: inline-flex; align-items: center; min-height: var(--touch); font-weight: var(--weight-body-bold); }
 
 .case-study { display: grid; gap: var(--space-5); align-content: start; }
@@ -779,7 +790,8 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 .flow-diagram__step:not(:has(.flow-diagram__note)) .flow-diagram__icon { grid-row: auto; }
 
 @media (min-width: 768px) {
-  .flow-diagram { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+  /* One column per step, so the same part serves two, three or four steps. */
+  .flow-diagram { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: var(--space-4); }
   .flow-diagram__step {
     grid-template-columns: none;
     grid-template-rows: auto auto 1fr;
@@ -826,6 +838,87 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
 .network-diagram__label--cameras { left: 30.6%; top: 86.1%; transform: translateX(-50%); }
 .network-diagram__label--sensors { left: 69.4%; top: 86.1%; transform: translateX(-50%); }
 
+/* Emphasised step: the person in "AI drafts and sorts, a person reviews and decides". */
+.flow-diagram__step--emphasis .flow-diagram__icon { background: var(--navy); }
+.flow-diagram__step--emphasis .flow-diagram__icon .icon { stroke: var(--white); }
+.flow-diagram__step--emphasis .flow-diagram__icon .icon__accent { stroke: var(--cyan); }
+.flow-diagram__step--emphasis .flow-diagram__label { font-family: var(--font-heading); font-size: var(--text-h3); font-weight: var(--weight-heading); }
+
+/* Integration diagram (Custom Software): label positions match viewBox 360 x 300. */
+.network-diagram__api { fill: var(--navy); }
+.network-diagram__label--accounting { left: 19.4%; top: 38.7%; transform: translateX(-50%); }
+.network-diagram__label--crm { left: 80.6%; top: 38.7%; transform: translateX(-50%); }
+.network-diagram__label--operations { left: 60%; top: 83.3%; transform: translateY(-50%); text-align: left; }
+.network-diagram__label--apis { left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--white); }
+
+/* Stack diagram (Data, AI & Automation): sign-in layer across the top. */
+.stack-diagram { list-style: none; max-width: 26rem; margin: var(--space-6) 0 0; padding: 0; display: grid; gap: var(--space-4); }
+.stack-diagram__layer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3.5rem;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--navy);
+  background: var(--white);
+  font-weight: var(--weight-body-bold);
+  line-height: var(--leading-snug);
+}
+.stack-diagram__layer + .stack-diagram__layer::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 1px);
+  bottom: 100%;
+  width: 2px;
+  height: calc(var(--space-4) + 2px);
+  background: var(--navy);
+}
+.stack-diagram__layer .icon { flex: none; width: 1.75rem; height: 1.75rem; }
+.stack-diagram__layer--access { background: var(--navy); color: var(--white); }
+.stack-diagram__layer--access .icon { stroke: var(--cyan); }
+.stack-diagram__label::first-letter { text-transform: uppercase; }
+
+/* MVP growth graphic and report preview (no text) */
+.mvp-diagram { max-width: 26rem; margin-top: var(--space-6); }
+.report-preview { max-width: 16rem; margin-top: var(--space-5); }
+.sketch__frame { fill: var(--white); stroke: var(--navy); stroke-width: 2.5; stroke-linejoin: round; }
+.sketch__line { fill: none; stroke: var(--navy); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.sketch__block { fill: var(--cyan-deep); }
+.sketch__block--accent { fill: var(--cyan); }
+.sketch__block--muted { fill: var(--rule); }
+.sketch__block--strong { fill: var(--navy); }
+
+/* Hub diagram (Digital Transformation): this service at the centre, four services around it. */
+.hub-diagram { max-width: 26rem; margin-block: var(--space-6); }
+.hub-diagram__center { display: flex; align-items: center; gap: var(--space-3); font-weight: var(--weight-body-bold); }
+.hub-diagram__dot {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.6rem solid var(--navy);
+  background: var(--cyan);
+}
+.hub-diagram__spokes { list-style: none; margin: 0 0 0 calc(1.5rem - 1px); padding: 0; }
+.hub-diagram__spoke {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  font-weight: var(--weight-body-bold);
+  line-height: var(--leading-snug);
+}
+.hub-diagram__spoke::before,
+.hub-diagram__spoke::after { content: ""; position: absolute; left: 0; background: var(--cyan-deep); }
+.hub-diagram__spoke::before { top: 0; bottom: 0; width: 2px; }
+.hub-diagram__spoke:last-child::before { bottom: 50%; }
+.hub-diagram__spoke::after { top: calc(50% - 1px); width: var(--space-5); height: 2px; }
+.hub-diagram__icon { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; background: var(--gray-light); }
+.hub-diagram__icon .icon { width: 2rem; height: 2rem; }
+.hub-diagram__label::first-letter { text-transform: uppercase; }
+
 /* ---------- 13. Steps (part: steps), first used in task 2 ---------- */
 
 .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: var(--space-6); }
@@ -845,13 +938,26 @@ a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
   line-height: 1;
 }
 .steps__title { margin-bottom: var(--space-3); }
+/* Mobile: a thin line runs down the number rail to the next step. */
+.steps__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--text-numeral) * 0.3);
+  top: calc(var(--text-numeral) + var(--space-3));
+  bottom: calc(var(--space-3) - var(--space-6));
+  width: 1px;
+  background: var(--navy);
+}
 
 @media (min-width: 1080px) {
   .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
   .steps__item { padding-left: 0; padding-top: calc(var(--text-numeral) + var(--space-5)); }
-  .steps__item::after {
+  .steps__item::after,
+  .steps__item:not(:last-child)::after {
     content: "";
     position: absolute;
+    bottom: auto;
+    width: auto;
     top: calc(var(--text-numeral) / 2);
     left: calc(var(--text-numeral) + var(--space-3));
     right: var(--space-3);

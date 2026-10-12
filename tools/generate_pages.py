@@ -82,6 +82,10 @@ def head(path, title, description, stub):
 <meta property="og:site_name" content="Ideal Technology Solutions">
 <meta property="og:title" content="{e(title)}">{ogdesc}
 <meta property="og:url" content="{BASE}{path}">
+<meta property="og:image" content="{BASE}/assets/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ideal Technology Solutions">
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

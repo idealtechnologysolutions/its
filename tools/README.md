@@ -57,4 +57,16 @@ Chrome is expected at `C:/Program Files/Google/Chrome/Application/chrome.exe`. S
 node tools/screenshots.cjs "%LOCALAPPDATA%\its-tools"
 ```
 
+### Share image
+
+`site/assets/brand/og-image.png` (1200 by 630) is rendered from `tools/og-card.html`. After changing the card, or when the final logo files arrive, run:
+
+```
+node tools/screenshots.cjs "%LOCALAPPDATA%\its-tools" --og
+```
+
+This writes only the share image and takes no page screenshots. Every page's head points to it through `tools/generate_pages.py`.
+
+### Note on other screenshot tools
+
 These are captured in one pass by Chrome itself. Screenshot extensions that scroll and stitch the page, such as FireShot in Chrome's phone mode, can show sections overlapping that look fine in the browser.

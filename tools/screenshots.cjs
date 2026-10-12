@@ -1,11 +1,16 @@
 /* Full-page screenshots of every built page at 375, 768 and 1280px.
 
    node tools/screenshots.cjs <puppeteer-core install dir>
+   node tools/screenshots.cjs <puppeteer-core install dir> --og
+
 
    Serves site/ on a free local port, finds every page that is not a stub,
    and saves docs/screenshots/<name>-<width>.png, where <name> is "home" for
    the homepage and the last slug segment otherwise. Old screenshots are
    deleted first, so the folder always matches the current build.
+
+   With --og it renders tools/og-card.html at 1200 x 630 to
+   site/assets/brand/og-image.png instead, and takes no page screenshots.
 
    puppeteer-core is installed outside the repo (see tools/README.md), so no
    package files or node_modules land in the repo. Chrome is found at
@@ -13,18 +18,24 @@
 
 const fs = require("fs");
 const http = require("http");
+const os = require("os");
 const path = require("path");
+const { pathToFileURL } = require("url");
 
 const ROOT = path.resolve(__dirname, "..");
 const SITE = path.join(ROOT, "site");
 const OUT = path.join(ROOT, "docs", "screenshots");
 const WIDTHS = [375, 768, 1280];
 const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+// A fixed Chrome profile outside the repo. Puppeteer does not try to delete a
+// profile it was given, which avoids EBUSY lock errors on Windows.
+const PROFILE = path.join(os.tmpdir(), "its-screenshots-chrome-profile");
 const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml", ".png": "image/png", ".txt": "text/plain" };
 
 const installDir = process.argv[2];
-if (!installDir) {
-  console.error("usage: node tools/screenshots.cjs <puppeteer-core install dir>");
+const ogOnly = process.argv.includes("--og");
+if (!installDir || installDir.startsWith("--")) {
+  console.error("usage: node tools/screenshots.cjs <puppeteer-core install dir> [--og]");
   process.exit(2);
 }
 const puppeteer = require(require.resolve("puppeteer-core", { paths: [path.resolve(installDir)] }));
@@ -54,14 +65,30 @@ function serve() {
   return new Promise(resolve => server.listen(0, "127.0.0.1", () => resolve(server)));
 }
 
+async function renderShareImage() {
+  const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, userDataDir: PROFILE });
+  try {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1200, height: 630 });
+    await page.goto(pathToFileURL(path.join(__dirname, "og-card.html")).href, { waitUntil: "networkidle0" });
+    await page.evaluate(() => document.fonts.ready);
+    const file = path.join(SITE, "assets", "brand", "og-image.png");
+    await page.screenshot({ path: file, clip: { x: 0, y: 0, width: 1200, height: 630 } });
+    console.log("saved", path.relative(ROOT, file).split(path.sep).join("/"));
+  } finally {
+    await browser.close();
+  }
+}
+
 (async () => {
+  if (ogOnly) return renderShareImage();
   const pages = builtPages();
   fs.mkdirSync(OUT, { recursive: true });
   for (const old of fs.readdirSync(OUT).filter(f => f.endsWith(".png"))) fs.unlinkSync(path.join(OUT, old));
 
   const server = await serve();
   const base = `http://127.0.0.1:${server.address().port}`;
-  const browser = await puppeteer.launch({ executablePath: CHROME, headless: true });
+  const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, userDataDir: PROFILE });
   try {
     for (const { url, name } of pages) {
       for (const width of WIDTHS) {

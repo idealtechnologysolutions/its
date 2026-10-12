@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Source for site/assets/brand/og-image.png (1200 x 630).
+     Render with: node tools/screenshots.cjs <puppeteer-core install dir> --og -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ITS share image</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&amp;display=swap">
+<style>
+  :root {
+    --navy: #0B2545;
+    --cyan: #12B8DE;
+    --white: #FFFFFF;
+    --font-heading: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  }
+  html, body { margin: 0; }
+  .card {
+    position: relative;
+    box-sizing: border-box;
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 96px 16px;
+    background: var(--navy);
+    color: var(--white);
+    overflow: hidden;
+  }
+  .card__mark { display: block; width: 280px; height: 160px; }
+  .card__name {
+    margin: 56px 0 0;
+    font-family: var(--font-heading);
+    font-optical-sizing: auto;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .card::after {
+    /* The deck line from the logo, running the full width. */
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 16px;
+    background: var(--cyan);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="card__mark" src="../site/assets/brand/logo-mark-reversed.svg" alt="" width="280" height="160">
+    <p class="card__name">Ideal Technology Solutions</p>
+  </div>
+</body>
+</html>
