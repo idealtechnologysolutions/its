@@ -3,10 +3,41 @@
 ## Company facts
 - Name: Ideal Technology Solutions, LLC (ITS)
 - In business since 2001 (25 years)
-- Headquarters: Southfield, Michigan. Serves Detroit and Metro Detroit. One project in Atlanta.
+- Headquarters: Southfield, Michigan.
+- Markets for the rebrand, in order of emphasis:
+  1. Metro Detroit and Michigan: home base and strongest claim. 25 years, local team, on site visits. Lead with this everywhere.
+  2. Atlanta, Georgia: a market ITS serves and is growing in. Say ITS works with clients in the Atlanta area. Do not claim a local office or on site visits there.
+  3. The wider United States: ITS serves clients across the US for cloud and software work that does not need an on site visit.
+- Do NOT mention Mexico or other specific states on the public site for now. Michael has connections in Mexico and ITS is building a warehouse app there for The Chemico Group, but this stays off the site until the work is signed and a decision is made to target that market. Never revive the old "global provider" claim.
 - Builds software on: .NET, Azure, Azure SQL, Power BI, React, Angular
 - Website platform: WordPress with a fully custom theme
+- URL structure: service pages use /services/[page-name]/ and industry pages use /industries/[page-name]/
 - Standard call to action: "Book a 30-minute appointment with a client advisor."
+
+## Page slugs (use these exactly; never invent a slug)
+- Home: /
+- Managed IT & Infrastructure: /services/managed-it-infrastructure/
+- Cloud & Cybersecurity: /services/cloud-cybersecurity/
+- Custom Software & Digital Products: /services/custom-software-digital-products/
+- Data, AI & Automation: /services/data-ai-automation/
+- Digital Transformation & Technology Consulting: /services/digital-transformation-consulting/
+- Government & Public Sector: /industries/government-public-sector/
+- Healthcare: /industries/healthcare/
+- Automotive: /industries/automotive/
+- Manufacturing: /industries/manufacturing/
+- Retail & Service: /industries/retail-service/
+- Education: /industries/education/
+- Nonprofits & Community Organizations: /industries/nonprofits/
+- Case studies:
+  - The Chemico Group: /work/chemico-credit-hold/
+  - Sean Anderson Foundation: /work/sean-anderson-foundation/
+  - DPSCD Foundation: /work/dpscd-foundation/
+  - Guidepoint Systems: /work/guidepoint-systems/
+  - Usher's New Look: /work/ushers-new-look/
+  - Rozafa Transport: /work/rozafa-transport/
+  - All work: /work/
+- About: /about/
+- Contact and booking: /contact/
 
 ## Five service pillars (the website lists only these)
 
@@ -45,7 +76,7 @@ Small and medium-sized businesses · minority-owned businesses · Detroit and Me
 
 ## Case studies (approved for use)
 1. **Sean Anderson Foundation** (Nonprofits): custom CMS website with embedded donations. Results published by the foundation: 10,000+ youth and families served, $3M+ raised, 15,000 school supplies and 16,500 backpacks distributed.
-2. **Chemico Credit Hold Repository** (Manufacturing): internal business application built with Angular, .NET Core, SQL Server and Azure, secured with Microsoft Entra ID. Tracks credit holds through a five-stage resolution scale with full edit-history logging. Proof for Pillars 2, 3 and 4.
+2. **Chemico Credit Hold Repository** (Manufacturing) [The client's full legal name is "The Chemico Group"; use that on first mention, then "Chemico" after. They are a current ITS client; naming them publicly and showing blurred screenshots is approved]: internal business application built with Angular, .NET Core, SQL Server and Azure, secured with Microsoft Entra ID. Tracks credit holds through a five-stage resolution scale with full edit-history logging. Proof for Pillars 2, 3 and 4.
 3. **DPSCD Foundation** (Education, K-12, Nonprofits): PHP CMS website with a fundraising platform and YouTube, Instagram and Google Maps integration.
 4. **Guidepoint Systems** (Automotive): WordPress website with four audience paths (OEMs, dealers, fleets, vehicle owners) and a secure customer portal.
 5. **Usher's New Look** (Nonprofits): HTML5/CSS3/JavaScript website with a city-based application flow.
@@ -66,7 +97,7 @@ Do NOT use: Metro Detroit Youth Day 2026 (waiting on permission).
 
 ## Service details (confirmed on the call, pending Michael's final sign off)
 - Monitoring: automated systems monitor client computers and servers every day, all day, every day of the week, including weekends, and send alerts by email at any hour. The support team responds during business hours. Do not describe this as a 24/7 staffed help desk.
-- Support response time: the team responds to support requests within 24 hours.
+- Support response time: the team responds to support requests within one business day. Business days are Monday to Friday; the office is closed Saturday and Sunday. Always write "within one business day", not "within 24 hours".
 - On site support: ITS provides on site visits across Metro Detroit when a problem cannot be resolved remotely.
 - Pricing: ITS does not publish fixed prices. Every engagement is quoted after a conversation about the client's requirements. Do not state or imply a fixed monthly fee. Point readers to booking a call for a quote.
 - Government and schools: ITS provides written scopes of work and itemized quotes, and plans projects around budget cycles and the school calendar. Contractor registrations and purchasing vehicles: [NEEDS INPUT: confirm with Michael].
@@ -82,3 +113,8 @@ How to use the history:
 - The 2007 healthcare milestone is useful background for the Healthcare industry page. It is history, not a case study: do not invent client names or results.
 - The 2004 partner names are historical. They are NOT a verified current partner list. Never describe ITS as a current "authorized" or "certified" partner of any company.
 - The 2012 milestone: [NEEDS INPUT: Michael to decide whether it appears on the About page]. Until then, leave it out. Never describe ITS as a "global" provider, and never offer telephony or business phone systems, which are discontinued.
+
+### Chemico relationship (context, not all for publication)
+- ITS first provided web services to The Chemico Group, then built the Credit Hold Repository app (delivered and in use).
+- ITS and Chemico are now in discussion to build two new apps: an inventory management system (two apps).
+- For the website: write only about delivered work (web services and the Credit Hold app). Do NOT claim the inventory apps, which are still in discussion. The deepening relationship can be described in general terms, for example "an ongoing technology partnership", but do not name unbuilt apps.
