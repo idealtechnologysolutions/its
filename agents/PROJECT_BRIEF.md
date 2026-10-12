@@ -10,6 +10,8 @@
   3. The wider United States: ITS serves clients across the US for cloud and software work that does not need an on site visit.
 - Do NOT mention Mexico or other specific states on the public site for now. Michael has connections in Mexico and ITS is building a warehouse app there for The Chemico Group, but this stays off the site until the work is signed and a decision is made to target that market. Never revive the old "global provider" claim.
 - Builds software on: .NET, Azure, Azure SQL, Power BI, React, Angular
+- Website domain: https://idealtechnologysolutions.us (no www). Use this exact base for canonical and Open Graph links.
+- Preview site for Michael's design review: https://preview.idealtechnologysolutions.us (planned)
 - Website platform: WordPress with a fully custom theme
 - URL structure: service pages use /services/[page-name]/ and industry pages use /industries/[page-name]/
 - Standard call to action: "Book a 30-minute appointment with a client advisor."

@@ -56,7 +56,7 @@ Type:
 - Every slug linked from a built page must resolve. For pages not written yet, create a stub with the site header and footer, the page name as `<h1>` and one line: "This page is being written." Mark stubs with `<meta name="robots" content="noindex">`.
 - The site header, footer and each repeated section are copied identically into every page, wrapped in comments that name the WordPress template part they will become:
   `<!-- part: header -->` ... `<!-- /part: header -->`
-  Use these part names: `header`, `footer`, `hero`, `card-list`, `steps`, `case-study`, `cta-band`, `needs-input`. Add new names only when no existing one fits, and list them in your report.
+  Use these part names: `header`, `footer`, `hero`, `card-list`, `steps`, `case-study`, `cta-band`, `needs-input`, `service-section`, `timeline`. Add new names only when no existing one fits, and list them in your report.
 - Class names describe content, not appearance: `.service-list`, `.case-study`, not `.blue-box`.
 - This is a private preview, hosted on GitHub Pages at a custom subdomain so root relative links work. Every page carries `<meta name="robots" content="noindex, nofollow">`, and `site/robots.txt` blocks all crawlers. Never remove these; they come off only at the WordPress launch.
 - Do not edit `.github/workflows/pages.yml`. Merging into `main` publishes the preview, and that is Shahbaz's decision.
@@ -75,7 +75,7 @@ Type:
 ## How you work
 
 1. Read the task file, the copy files it names and this file.
-2. Before your first build in a task that introduces new layouts, write or update `site/DESIGN_PLAN.md`: tokens, type scale, a short ASCII wireframe per new layout, and the reasoning behind each choice. Stop and wait for Shahbaz to approve it before writing code.
+2. Before your first build in a task that introduces new layouts, write or update `docs/DESIGN_PLAN.md`: tokens, type scale, a short ASCII wireframe per new layout, and the reasoning behind each choice. Stop and wait for Shahbaz to approve it before writing code.
 3. Build. Check your own work at the three widths, using screenshots if a browser tool is available.
 4. Commit on a branch named for the task (for example `build/task-1`). Never commit to `main` and never push. Shahbaz reviews, pushes and merges.
 5. Finish with a short report:

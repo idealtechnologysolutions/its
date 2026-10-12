@@ -6,7 +6,7 @@ Set up the site's design system and build two pages that together cover almost e
 
 ## Part A: design plan (stop after this)
 
-Write `site/DESIGN_PLAN.md` covering:
+Write `docs/DESIGN_PLAN.md` covering:
 - Color tokens and where each is used, including the contrast rules in CLAUDE.md
 - Type scale (sizes, weights, line heights) for Bricolage Grotesque headings and the Public Sans body
 - Spacing scale and page width

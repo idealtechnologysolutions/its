@@ -1,6 +1,6 @@
 # Design plan: ITS preview site (Build task 1, Part A)
 
-Status: **draft, waiting for Shahbaz's approval.** No CSS, JS or HTML is written until this is approved.
+Status: **approved by Shahbaz on 2026-10-12**, with the answers recorded in section 8.
 
 Covers the design system, the homepage (`content/homepage.md`) and the Managed IT & Infrastructure page (`content/pillar-1-managed-it.md`). Task 2 reuses the same parts for the other service pages.
 
@@ -571,7 +571,15 @@ Sections that appear on only one page (industries list, map) are wrapped in `<!-
 
 ---
 
-## 8. Decisions for you to confirm before I build
+## 8. Decisions (approved 2026-10-12)
+
+Shahbaz's answers:
+- D1 yes, D2 keep the Managed IT hero still, D3 yes, D4 keep the copy order (it matches the industry priority in the brief), D5 short phrases taken word for word from the copy.
+- D6 canonical and Open Graph base: `https://idealtechnologysolutions.us` (no www).
+- D7 and D8 approved. `service-section` and `timeline` are added to the part names in CLAUDE.md.
+- This plan lives at `docs/DESIGN_PLAN.md`, outside the published `site/` folder.
+
+The original questions follow for the record.
 
 **D1. Cross links in Pillar 1.** The copy has no inline links, but the build notes list cross links. I plan to link existing words without changing any text:
 - "Cloud & Cybersecurity page" (Managed IT Services) and "Firewalls" (Network Design) to `/services/cloud-cybersecurity/`
