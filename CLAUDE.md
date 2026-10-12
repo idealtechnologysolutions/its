@@ -57,6 +57,7 @@ Type:
 - The site header, footer and each repeated section are copied identically into every page, wrapped in comments that name the WordPress template part they will become:
   `<!-- part: header -->` ... `<!-- /part: header -->`
   Use these part names: `header`, `footer`, `hero`, `card-list`, `steps`, `case-study`, `cta-band`, `needs-input`, `service-section`, `timeline`. Add new names only when no existing one fits, and list them in your report.
+- Always use `tools/generate_pages.py` for changes to the header, footer and `<head>`: edit the script and run it, never edit those parts page by page. Run it after building or editing any page. See `tools/README.md`.
 - Class names describe content, not appearance: `.service-list`, `.case-study`, not `.blue-box`.
 - This is a private preview, hosted on GitHub Pages at a custom subdomain so root relative links work. Every page carries `<meta name="robots" content="noindex, nofollow">`, and `site/robots.txt` blocks all crawlers. Never remove these; they come off only at the WordPress launch.
 - Do not edit `.github/workflows/pages.yml`. Merging into `main` publishes the preview, and that is Shahbaz's decision.

@@ -11,7 +11,7 @@
 
 We look after the computers, networks and software your team depends on, from our office in Southfield, Michigan.
 
-[Book a 30 minute call]
+[Book a 30 minute call](/contact/)
 
 ## One team for the technology you rely on
 
@@ -79,7 +79,7 @@ ITS started in 2001 as a hardware and software support company in the Detroit me
 
 Book a 30 minute appointment with a client advisor. Tell us what you have in place today and where it falls short. We will explain how we can help and follow up with a quote.
 
-[Book a 30 minute call]
+[Book a 30 minute call](/contact/)
 
 ---
 

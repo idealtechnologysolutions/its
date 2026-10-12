@@ -14,7 +14,7 @@
 - Preview site for Michael's design review: https://preview.idealtechnologysolutions.us (planned)
 - Website platform: WordPress with a fully custom theme
 - URL structure: service pages use /services/[page-name]/ and industry pages use /industries/[page-name]/
-- Standard call to action: "Book a 30-minute appointment with a client advisor."
+- Standard call to action: "Book a 30 minute appointment with a client advisor."
 
 ## Page slugs (use these exactly; never invent a slug)
 - Home: /
