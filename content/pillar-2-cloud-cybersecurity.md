@@ -64,7 +64,7 @@ Patient records, resident data and student information call for extra care. We h
 
 ## The Chemico Group: Credit Hold Repository
 
-The Chemico Group, a manufacturer, needed an internal application to track credit holds as they move through a five stage resolution scale. We built it with Angular, .NET Core and SQL Server and hosted it on Microsoft Azure. Staff sign in with their Microsoft Entra ID work accounts, so the company manages access in one place and can shut it off when someone leaves. Every edit is logged, which gives Chemico a full history of changes to review at any time.
+The Chemico Group, a manufacturer, needed an internal application to track credit holds as they move through a five stage resolution scale. We built it and hosted it on Microsoft Azure. Staff sign in with their Microsoft Entra ID work accounts, so the company manages access in one place and can shut it off when someone leaves. Every edit is logged, which gives Chemico a full history of changes to review at any time.
 
 ## Talk to a client advisor
 

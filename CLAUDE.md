@@ -53,6 +53,7 @@ Type:
 - One stylesheet: `site/assets/css/main.css`. One script: `site/assets/js/main.js`. CSS custom properties for every color, font and spacing value.
 - Each page lives at `site/<slug>/index.html` so URLs match the final WordPress slugs exactly. The homepage is `site/index.html`.
 - All internal links are root relative (`/services/cloud-cybersecurity/`), exactly as in the copy.
+- Never place two links next to each other with only punctuation between them (for example "[The Chemico Group](...), [a manufacturer](...)"). In running text, leave one of them unlinked.
 - Every slug linked from a built page must resolve. For pages not written yet, create a stub with the site header and footer, the page name as `<h1>` and one line: "This page is being written." Mark stubs with `<meta name="robots" content="noindex">`.
 - The site header, footer and each repeated section are copied identically into every page, wrapped in comments that name the WordPress template part they will become:
   `<!-- part: header -->` ... `<!-- /part: header -->`

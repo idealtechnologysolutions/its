@@ -69,7 +69,7 @@ Healthcare providers, public agencies and K-12 schools hold information that mus
 
 ### The Chemico Group: Credit Hold Repository
 
-For The Chemico Group, a manufacturing client, we built an internal business application with Angular, .NET Core, SQL Server and Azure, secured with Microsoft Entra ID. It tracks every credit hold through a five stage resolution scale and logs each edit. Structured, well logged business data like this is the foundation that dashboards and automation are built on. [Read the case study](/work/chemico-credit-hold/)
+For The Chemico Group, a manufacturing client, we built an internal business application that tracks every credit hold through a five stage resolution scale and logs each edit. Structured, well logged business data like this is the foundation that dashboards and automation are built on. [Read the case study](/work/chemico-credit-hold/)
 
 ### How we use AI at ITS
 
